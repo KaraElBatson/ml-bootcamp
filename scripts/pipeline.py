@@ -4,6 +4,7 @@ Complete ML pipeline
 import os
 import argparse
 import logging
+import warnings
 from typing import Dict, Tuple
 import pandas as pd
 from sklearn.pipeline import Pipeline

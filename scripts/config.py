@@ -73,6 +73,13 @@ XGB_PARAMS = {
     "n_jobs": -1
 }
 
+SVR_PARAMS = {
+    "kernel": "rbf",
+    "C": 1.0,
+    "epsilon": 0.1,
+    "gamma": "scale"
+}
+
 # Hyperparameter tuning grid
 HYPERPARAM_GRID = {
     "lgbm": {

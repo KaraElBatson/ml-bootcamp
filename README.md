@@ -1,9 +1,16 @@
-# Machine Learning Bootcamp Project: Credit Scoring
+# Machine Learning Bootcamp Project
 
-This repository is a complete, professional-grade template for a Machine Learning Bootcamp project, focusing on a Credit Scoring classification problem. It includes:
+This repository contains machine learning projects for different domains:
 
-- Industry & Problem: Credit scoring (binary classification)
-- Dataset Selection: Instructions to get real data (from Kaggle) or generate synthetic sample data
+## 1. Credit Scoring (Classification)
+A complete, professional-grade template for a Credit Scoring classification problem using models like LightGBM, Random Forest, and XGBoost.
+
+## 2. Age Prediction (Regression with SVR)
+An age prediction project using Support Vector Regression (SVR) with proper feature preprocessing.
+
+### Common Features:
+- Industry & Problem: Multiple domains (credit scoring, age prediction)
+- Dataset Selection: Instructions to get real data or generate synthetic sample data
 - Repository Structure: Clear directories, working scripts, notebooks, and API for inference
 
 ## Project Structure
@@ -71,13 +78,19 @@ python scripts/generate_sample_data.py
 ```
 This writes `data/raw/credit_scoring_data.csv`.
 
-4) Run the full pipeline
+4) Run the full credit scoring pipeline
 ```
 python scripts/pipeline.py --generate
 ```
 This will generate data (if missing), train multiple models (RF/LGBM/XGB), evaluate them, and save the best pipeline to `assets/models/credit_scoring_model.pkl`.
 
-5) Batch/Single inference from CLI
+5) Run age prediction pipeline (requires train.csv and test.csv in data/raw)
+```
+python scripts/regression_pipeline.py --train train.csv --test test.csv --output submission_svr.csv
+```
+This will run the SVR model to predict ages and save the results to the output file.
+
+6) Batch/Single inference from CLI
 - Single (interactive):
 ```
 python scripts/inference.py --input single
@@ -87,19 +100,20 @@ python scripts/inference.py --input single
 python scripts/inference.py --input path/to/file.csv --output predictions.csv
 ```
 
-6) Serve a web API
+7) Serve a web API
 ```
 uvicorn scripts.app:app --host 0.0.0.0 --port 8000 --reload
 ```
 - Docs: http://127.0.0.1:8000/docs
 
 ## Notebooks Overview
-- 01_Exploratory_Data_Analysis: EDA, distributions, correlations
-- 02_Baseline_Model: Baselines with Logistic Regression and Random Forest
-- 03_Feature_Engineering: Illustrates transformations and validation
-- 04_Model_Optimization: Hyperparameter tuning examples
-- 05_Model_Evaluation: Aggregated metrics, ROC/PR curves
-- 06_Final_Pipeline: End-to-end training to model artifact
+- 01_Exploratory_Data_Analysis: EDA, distributions, correlations (Credit Scoring)
+- 02_Baseline_Model: Baselines with Logistic Regression and Random Forest (Credit Scoring)
+- 03_Feature_Engineering: Illustrates transformations and validation (Credit Scoring)
+- 04_Model_Optimization: Hyperparameter tuning examples (Credit Scoring)
+- 05_Model_Evaluation: Aggregated metrics, ROC/PR curves (Credit Scoring)
+- 06_Final_Pipeline: End-to-end training to model artifact (Credit Scoring)
+- 07_Age_Prediction_SVR: Age prediction using Support Vector Regression
 
 ## Configuration
 All tunables are in `scripts/config.py`, including paths, model hyperparameters, evaluation metrics, and API settings.
