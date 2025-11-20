@@ -1,0 +1,57 @@
+"""
+Setup script for the Machine Learning Bootcamp Project
+"""
+
+from setuptools import setup, find_packages
+
+setup(
+    name="ml-bootcamp",
+    version="0.1.0",
+    packages=find_packages(),
+    include_package_data=True,
+    package_dir={"": "scripts"},
+    install_requires=[
+        "numpy>=1.21.0",
+        "pandas>=1.5.0",
+        "scikit-learn>=1.0.0",
+        "scipy>=1.8.0",
+        "matplotlib>=3.5.0",
+        "seaborn>=0.11.0",
+        "lightgbm>=3.0.0",
+        "xgboost>=1.5.0",
+        "catboost>=1.0.0",
+        "category-encoders>=2.4.0",
+        "feature-engine>=1.2.0",
+        "shap>=0.41.0",
+        "lime>=0.2.0",
+        "optuna>=3.0.0",
+        "hyperopt>=0.2.5",
+        "tqdm>=4.64.0",
+        "joblib>=1.2.0",
+        "pyyaml>=6.0",
+        "python-dotenv>=0.19.0",
+        "fastapi>=0.75.0",
+        "uvicorn>=0.17.0",
+        "pydantic>=1.9.0",
+        "notebook>=6.4.0",
+        "ipykernel>=6.13.0",
+        "ipympl>=0.9.0",
+        "mlflow>=1.20.0",
+    ],
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+    ],
+    python_requires=">=3.8",
+    author="Machine Learning Bootcamp",
+    author_email="ml-bootcamp@example.com",
+    description="A complete machine learning project from scratch.",
+    keywords="machine learning data science credit scoring classification",
+    url="https://github.com/yourusername/ml-bootcamp",
+    license="MIT",
+)
